@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tootony0824/all-toast-for-mac/main/schemas/toast-notification.schema.json",
+  "title": "All Toast for Mac Notification",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "title"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "kind": { "enum": ["single", "digest"] },
+    "monitor": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "subtitle": { "type": "string" },
+    "message": { "type": "string" },
+    "detail": { "type": "string" },
+    "url": { "type": "string", "format": "uri" },
+    "duration": { "type": "number", "minimum": 1, "maximum": 120 },
+    "sticky": { "type": "boolean" },
+    "sound": { "type": "string" },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "symbol": { "type": "string" },
+        "accent": { "type": "string" },
+        "iconPath": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "time", "summary", "url"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "time": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string", "minLength": 1 },
+          "source": { "type": "string" },
+          "sourceType": { "enum": ["official", "authority", "industry", "social", "unknown"] },
+          "verification": { "enum": ["verified", "pending", "conflicting", "unknown"] },
+          "relevance": { "enum": ["direct", "indirect", "background", "unknown"] },
+          "importance": { "enum": ["urgent", "important", "normal", "unknown"] },
+          "action": { "type": "string" },
+          "deadline": { "type": ["string", "null"] },
+          "url": { "type": "string", "format": "uri" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "single" } } },
+      "then": { "required": ["message", "url"] }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "digest" } } },
+      "then": { "required": ["subtitle", "items"] }
+    }
+  ],
+  "additionalProperties": false
+}

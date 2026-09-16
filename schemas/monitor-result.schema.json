@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/tootony0824/all-toast-for-mac/main/schemas/monitor-result.schema.json",
+  "title": "All Toast for Mac Monitor Result",
+  "type": "object",
+  "required": ["status", "monitor", "checkedAt", "windowStart", "windowEnd", "items", "errors"],
+  "properties": {
+    "status": { "enum": ["ok", "no_new", "partial", "fetch_failed"] },
+    "monitor": { "type": "string", "minLength": 1 },
+    "checkedAt": { "type": "string", "format": "date-time" },
+    "windowStart": { "type": "string", "format": "date-time" },
+    "windowEnd": { "type": "string", "format": "date-time" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "summary", "source", "publishedAt", "url"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "summary": { "type": "string" },
+          "source": { "type": "string", "minLength": 1 },
+          "sourceType": { "enum": ["official", "authority", "industry", "social", "unknown"] },
+          "publishedAt": { "type": "string", "format": "date-time" },
+          "url": { "type": "string", "format": "uri" },
+          "verification": { "enum": ["verified", "pending", "conflicting", "unknown"] },
+          "relevance": { "enum": ["direct", "indirect", "background", "unknown"] },
+          "importance": { "enum": ["urgent", "important", "normal", "unknown"] },
+          "action": { "type": "string" },
+          "deadline": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "message"],
+        "properties": {
+          "source": { "type": "string" },
+          "message": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

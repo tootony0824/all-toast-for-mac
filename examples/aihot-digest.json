@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "kind": "digest",
+  "monitor": "aihot",
+  "title": "AIHOT 早间精华",
+  "subtitle": "昨天 18:30 - 今天 09:00 · 2 条精选",
+  "theme": {
+    "symbol": "flame.fill",
+    "accent": "systemOrange"
+  },
+  "sticky": true,
+  "sound": "Glass",
+  "items": [
+    {
+      "id": "example-aihot-1",
+      "title": "模型发布示例",
+      "time": "今天 08:40",
+      "summary": "这是一条用于验证通用提醒协议的 AIHOT 示例，不代表真实新闻。",
+      "source": "AIHOT 示例来源",
+      "sourceType": "industry",
+      "verification": "verified",
+      "relevance": "direct",
+      "importance": "important",
+      "action": "点击原文查看完整信息",
+      "deadline": null,
+      "url": "https://aihot.virxact.com"
+    },
+    {
+      "id": "example-aihot-2",
+      "title": "产品更新示例",
+      "time": "今天 07:25",
+      "summary": "第二条示例用于验证多条面板、滚动和点击链接。",
+      "source": "AIHOT 示例来源",
+      "sourceType": "industry",
+      "verification": "verified",
+      "relevance": "indirect",
+      "importance": "normal",
+      "action": "按需查看",
+      "deadline": null,
+      "url": "https://aihot.virxact.com"
+    }
+  ]
+}

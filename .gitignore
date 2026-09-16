@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+__pycache__/
+*.py[cod]
+
+renderer/.build/
+renderer/dist/
+
+*.tmp
+*-state.json
+state/
