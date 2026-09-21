@@ -19,9 +19,9 @@
 | 在 Mac 上弹右下角提醒 | 本机 Codex 自动化 → 标准通知 JSON → `scripts/all-toast.py` |
 | 每天展示多条情报面板 | 采集器 → 精选与去重 → `kind=digest` 通知 JSON |
 | 只有一条紧急更新 | 采集器 → `kind=single` 通知 JSON |
-| 复用 AIHOT 展示效果 | 读取 `macos-info-monitor.md`，不要复制 AIHOT 采集脚本 |
+| 复用 AIHOT 展示效果 | 读取 [`architecture.md`](architecture.md)，不要复制 AIHOT 采集脚本 |
 | 搜索官网、公众号、社媒 | 先走 `web-research/routing.md`，再转换为标准通知 JSON |
-| 查询 AIHOT 精选并接入提醒 | `information-api.md` → `scripts/aihot-selected.py` |
+| 查询 AIHOT 精选并接入提醒 | [`data-pipeline.md`](data-pipeline.md) → `scripts/aihot-selected.py` |
 | 云端任务需要调用本机 App | 不直接调用；迁移或配对本机 Codex 自动化 |
 | 飞书提醒或日程 | 走系统入口 `lark-router` |
 

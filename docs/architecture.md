@@ -42,7 +42,7 @@ macOS 单条浮窗或多条面板
 
 ## 通知协议
 
-协议文件：[`schemas/toast-notification.schema.json`](schemas/toast-notification.schema.json)。
+协议文件：[`toast-notification.schema.json`](../schemas/toast-notification.schema.json)。
 
 ### 单条提醒
 

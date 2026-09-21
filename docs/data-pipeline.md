@@ -27,7 +27,7 @@ aihot-selected.py  →  monitor-result JSON  →  notification JSON  →  all-to
 
 ## 监控结果
 
-Schema：[`schemas/monitor-result.schema.json`](schemas/monitor-result.schema.json)。
+Schema：[`monitor-result.schema.json`](../schemas/monitor-result.schema.json)。
 
 必需字段：
 

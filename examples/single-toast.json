@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "kind": "single",
+  "title": "构建完成",
+  "message": "新的构建产物已经生成。",
+  "detail": "点击打开 All Toast for Mac 项目主页。",
+  "url": "https://github.com/tootony0824/all-toast-for-mac",
+  "duration": 10,
+  "sound": "Glass",
+  "theme": {
+    "symbol": "checkmark.seal.fill",
+    "accent": "systemGreen"
+  }
+}
